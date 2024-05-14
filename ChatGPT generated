@@ -1,0 +1,6 @@
+-- Get the local player
+local player = game.Players.LocalPlayer
+
+-- Set the character's visibility to false
+player.Character:WaitForChild("HumanoidRootPart").Anchored = true
+player.Character:WaitForChild("HumanoidRootPart").Transparency = 1
