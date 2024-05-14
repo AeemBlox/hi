@@ -9,7 +9,7 @@ local Player = game.Players.LocalPlayer
 })
 
 function MakeScriptHub()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AeemBlox/hi/main/ChatGPT%20generated"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/main/UniversalInvis.lua", true))()
 end
 
 OrionLib:MakeNotification({
