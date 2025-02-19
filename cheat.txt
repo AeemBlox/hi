@@ -1,0 +1,22 @@
+local Players = game:GetService("Players") local UIS = game:GetService("UserInputService") local RunService = game:GetService("RunService") local player = Players.LocalPlayer local character = player.Character or player.CharacterAdded:Wait() local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+-- Create GUI local screenGui = Instance.new("ScreenGui") screenGui.Parent = game.CoreGui
+
+local frame = Instance.new("Frame") frame.Size = UDim2.new(0, 200, 0, 250) frame.Position = UDim2.new(0, 10, 0, 10) frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2) frame.Parent = screenGui
+
+-- ESP Function local function enableESP() for _, p in pairs(Players:GetPlayers()) do if p ~= player and p.Character then local highlight = Instance.new("Highlight") highlight.Parent = p.Character highlight.FillColor = Color3.new(1, 0, 0) end end end
+
+local espButton = Instance.new("TextButton") espButton.Size = UDim2.new(1, 0, 0, 50) espButton.Text = "Enable ESP" espButton.Parent = frame espButton.MouseButton1Click:Connect(enableESP)
+
+-- Speed Boost local function increaseSpeed() humanoid.WalkSpeed = 50 end
+
+local speedButton = Instance.new("TextButton") speedButton.Size = UDim2.new(1, 0, 0, 50) speedButton.Position = UDim2.new(0, 0, 0, 50) speedButton.Text = "Speed Boost" speedButton.Parent = frame speedButton.MouseButton1Click:Connect(increaseSpeed)
+
+-- Jump Power local function increaseJump() humanoid.JumpPower = 100 end
+
+local jumpButton = Instance.new("TextButton") jumpButton.Size = UDim2.new(1, 0, 0, 50) jumpButton.Position = UDim2.new(0, 0, 0, 100) jumpButton.Text = "Increase Jump" jumpButton.Parent = frame jumpButton.MouseButton1Click:Connect(increaseJump)
+
+-- Hitbox Expander local function expandHitbox() if character:FindFirstChild("HumanoidRootPart") then character.HumanoidRootPart.Size = Vector3.new(10, 10, 10) character.HumanoidRootPart.Transparency = 0.5 end end
+
+local hitboxButton = Instance.new("TextButton") hitboxButton.Size = UDim2.new(1, 0, 0, 50) hitboxButton.Position = UDim2.new(0, 0, 0, 150) hitboxButton.Text = "Expand Hitbox" hitboxButton.Parent = frame hitboxButton.MouseButton1Click:Connect(expandHitbox)
+
